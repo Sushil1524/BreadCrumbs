@@ -3,6 +3,7 @@ import 'package:breadcrumbs/screens/home_screen.dart';
 import 'package:breadcrumbs/screens/settings_screen.dart';
 import 'package:breadcrumbs/screens/stats_screen.dart';
 import 'package:breadcrumbs/screens/transactions_screen.dart';
+import 'package:breadcrumbs/style.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -21,6 +22,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: appDarkTheme,
       home: HomeScreen(),
       routes: {
         '/home': (context) => HomeScreen(),
@@ -29,18 +31,6 @@ class MainApp extends StatelessWidget {
         '/stats': (context) => StatsScreen(),
         '/transactions': (context) => TransactionsScreen(),
       },
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.black,
-          foregroundColor: Colors.blue,
-          titleTextStyle: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-      ),
     );
   }
 }

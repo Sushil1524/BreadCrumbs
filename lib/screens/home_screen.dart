@@ -1,8 +1,9 @@
+import 'package:breadcrumbs/components/bottom_navbar.dart';
+import 'package:breadcrumbs/data/data_methods.dart';
 import 'package:breadcrumbs/data/database.dart';
+import 'package:breadcrumbs/style.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:breadcrumbs/data/data_methods.dart';
-import 'package:breadcrumbs/components/bottom_navbar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -29,19 +30,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text(
-          "BreadCrumbs Home",
-          style: TextStyle(color: Colors.white),
-        ),
+        title: Text("BreadCrumbs Home", style: appBarTextStyle),
         centerTitle: true,
         automaticallyImplyLeading: false,
       ),
-      body: Center(
-        child: Text("Home Screen", style: TextStyle(color: Colors.white)),
-      ),
-      bottomNavigationBar: const BottomNavbar(),
+      body: Center(child: Text("Home Screen", style: bodyTextStyle)),
+      bottomNavigationBar: const BottomNavbar(currentScreen: 0),
     );
   }
 }
